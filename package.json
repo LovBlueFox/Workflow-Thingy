@@ -1,0 +1,57 @@
+{
+  "name": "workflow-thingy",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "pages/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "build --win --x64 --mirror https://cnpmjs.org/mirrors/nwjs/ ."
+  },
+  "keywords": [],
+  "author": "Nathan Jones",
+  "license": "ISC",
+  "build": {
+    "appId": "au.bluefox.workflow",
+    "nwVersion": "0.50.2",
+    "packed": true,
+    "targets": [
+      "zip",
+      "nsis7z"
+    ],
+    "strippedProperties": [
+      "build"
+    ],
+    "outputPattern": "${NAME} ${VERSION} ${PLATFORM} ${ARCH}",
+    "win": {
+      "productName": "Workflow Thingy",
+      "companyName": "BlueFox.au",
+      "copyright": "copyright",
+      "icon": "./assets/logo.ico"
+    },
+    "nsis": {
+      "installDirectory": "$PROGRAMFILES\\${_COMPANYNAME}\\${_APPNAME}",
+      "diffUpdaters": true
+    }
+  },
+  "description": "A thingy for workflow",
+  "devDependencies": {
+    "nwjs-builder-phoenix": "^1.15.0",
+    "nwjs-types": "^1.0.0"
+  },
+  "window": {
+    "icon": "./assets/logo.png",
+    "width": 1600,
+    "height": 900,
+    "toolbar": false,
+    "frame": true,
+    "position": "center",
+    "min_width": 265,
+    "min_height": 400,
+    "resizable": true,
+    "show": true
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}

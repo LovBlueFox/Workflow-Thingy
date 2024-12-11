@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Server Thingy</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            background: black;
+            color: white;
+        }
+
+        #console {
+            padding: 10px;
+            overflow: auto;
+        }
+
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        div > div {
+            padding: 5px;
+            border-bottom: 1px solid #333;
+        }
+
+        div > div:last-child {
+            border-bottom: none;
+        }
+
+        div > div:nth-child(odd) {
+            background: #333;
+        }
+
+        div > div:nth-child(even) {
+            background: #444;
+        }
+    </style>
+    <script>
+        console.oldLog = console.log;
+        console.oldError = console.error;
+        console.log = function (...messages) {
+            console.oldLog(...messages);
+            const node = document.createElement("div");
+            messages.forEach(message => {
+                let text;
+                if (typeof message === 'object') {
+                    text = JSON.stringify(message, null, 2); // Pretty-print JSON with 2-space indentation
+                } else {
+                    text = message;
+                }
+                const textnode = document.createTextNode(text + ' ');
+                node.appendChild(textnode);
+            });
+            document.getElementById("console").appendChild(node);
+        }
+        console.error = function (...messages) {
+            console.oldError(...messages);
+            const node = document.createElement("div");
+            node.style.color = 'red';
+            messages.forEach(message => {
+                let text;
+                if (typeof message === 'object') {
+                    text = JSON.stringify(message, null, 2); // Pretty-print JSON with 2-space indentation
+                } else {
+                    text = message;
+                }
+                const textnode = document.createTextNode(text + ' ');
+                node.appendChild(textnode);
+            });
+            document.getElementById("console").appendChild(node);
+        }
+    </script>
+</head>
+<body>
+<button onclick="joinWorkflow(true)">Open Session</button>
+<div id="console"></div>
+</body>
+<script src="/src/index.js"></script>
+<script src="/src/server.js"></script>
+</html>

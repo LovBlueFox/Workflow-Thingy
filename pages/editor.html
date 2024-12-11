@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkFlow Thingy</title>
+    <link rel="stylesheet" href="editor.css">
+    <link rel="stylesheet" href="markdown.css">
+    <script src="/src/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body oncontextmenu="return false;">
+<canvas id="workflow-canvas"></canvas>
+<!--<div id="help-box">-->
+<!--    <p>Keyboard shortcuts</p>-->
+<!--    <ul>-->
+<!--        <li>Ctrl + A: Select All Nodes</li>-->
+<!--        <li>Ctrl + Drag: Multi-Select Nodes</li>-->
+<!--        <li>Shift + Left Click: Add Node to Selection</li>-->
+<!--        <li>Left Click: Select Node</li>-->
+<!--        <li>Left Click + Drag: Move Node or Pan Grid</li>-->
+<!--        <li>Shift + Left Click + Drag: Move Selected Nodes</li>-->
+<!--        <li>Middle Click + Drag: Pan Grid</li>-->
+<!--        <li>Right Click: Open Context Menu</li>-->
+<!--        <li>Ctrl + C: Copy Node</li> -->
+<!--        <li>Ctrl + V: Paste Node</li> -->
+<!--         <li>Delete: Remove Node</li>-->
+<!--         <li>Ctrl + Z: Undo Action</li>-->
+<!--        <li>Ctrl + Y: Redo Action</li> -->
+<!--    </ul>-->
+<!--</div>-->
+<div id="notify-box"></div>
+<div id="info-box">Loading...</div>
+<div id="frame-rate-box" onclick="openPerformance()" style="cursor: pointer">Loading...</div>
+<div class="modal"  id="workflow-list" style="display: none;">
+    <div class="modal-header">
+        <span>Workflows</span>
+        <button onclick="workflow.closeList()">X</button>
+    </div>
+    <div class="modal-body" id="workflow-list-body">
+    </div>
+</div>
+<div id="menu">
+    <button onclick="workflow.start()">Start</button>
+    <hr>
+    <div class="queue-progress">
+        <progress id="queue-progress" max="100" value="100" class="progress-wait"></progress>
+        <span id="queue-progress-number">Waiting</span>
+    </div>
+    <button onclick="workflow.save();">Save</button>
+    <button onclick="workflow.saveAs();">Save As</button>
+    <button onclick="workflow.openList();">Load</button>
+    <button onclick="workflow.clear();">Clear</button>
+    <hr>
+    <button>Settings</button>
+</div>
+
+<div id="overlay" style="display: none"></div>
+<script src="/src/workflow.js"></script>
+<script src="/src/multiplayer.js"></script>
+<script src="/src/drawing.js"></script>
+<script src="/src/controls.js"></script>
+<script src="/src/canvas.js"></script>
+<script src="/src/console.js"></script>
+<script src="/src/start.js"></script>
+</body>
+</html>

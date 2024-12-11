@@ -1,0 +1,76 @@
+html, body {
+    margin: 0;
+    background: black;
+}
+* {
+    font-family: Arial, serif;
+    user-select: none;
+}
+.container {
+    display: flex;
+}
+.overlay {
+    opacity: 0.18;
+    background: linear-gradient(45deg, #ff0ff0, #00ffff);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.menu {
+    min-width: 250px;
+    max-width: 250px;
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+}
+.menu > a, .menu > button {
+    background: rgba(106, 80, 111, 0.4);
+    color: white;
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
+    margin: 25px 30px;
+    padding: 9px 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 1;
+    transition: all 250ms;
+    cursor: pointer;
+    width: 190px;
+}
+.menu-primary {
+    background: rgba(25, 159, 189, 0.4) !important;
+}
+.menu-primary:hover {
+    background: #199fbd !important;
+}
+.menu > a:hover {
+    background: #6a506f;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.copyright {
+    text-align: right;
+    bottom: 6px;
+    right: 8px;
+    position: absolute;
+    color: white;
+    opacity: .7;
+}
+.play-area {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+.logo {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0.8);
+    left: 50%;
+    top: 50%;
+    transition: all 1s;
+    width: 200px;
+}
+.logo:hover {
+    transform: translate(-50%, -50%) scale(0.9);
+}

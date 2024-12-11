@@ -1,0 +1,121 @@
+.markdown > h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.markdown > h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.markdown >  h3 {
+    font-size: 1.17em;
+    margin: 0;
+}
+
+.markdown >  p {
+    margin: 0;
+}
+
+.markdown >  a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.markdown >  a:hover {
+    text-decoration: underline;
+}
+
+.markdown >  ul {
+    list-style-type: disc;
+    margin: 1em 0;
+    padding-left: 40px;
+}
+
+.markdown >  ol {
+    list-style-type: decimal;
+    margin: 1em 0;
+    padding-left: 40px;
+}
+
+.markdown >  code {
+    background-color: #11131f;
+    border: 1px solid #22242a;
+    color: #f8f8f8;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+.markdown >  pre {
+    background-color: #11131f;
+    border: 1px solid #22242a;
+    color: #f8f8f8;
+    border-radius: 3px;
+    padding: 10px;
+    overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+.markdown >  pre > code {
+    background-color: transparent;
+    border: none;
+    color: #f8f8f8;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.markdown >  blockquote {
+    background-color: #11131f;
+    border-left: 3px solid #007BFF;
+    color: #f8f8f8;
+    padding: 2px 15px;
+    margin: 1em 0;
+}
+
+.markdown >  hr {
+    border: 0;
+    border-top: 1px solid #343a40;
+    margin: 1em 0;
+}
+
+.markdown >  img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdown >  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.markdown >  th {
+    background-color: #343a40;
+    color: #f8f8f8;
+    font-weight: bold;
+    padding: 6px 13px;
+    text-align: left;
+}
+
+.markdown >  td {
+    background-color: #22242a;
+    color: #f8f8f8;
+    padding: 6px 13px;
+    text-align: left;
+}
+
+.markdown >  tr:nth-child(even) {
+    background-color: #343a40;
+}
+
+.markdown >  tr:nth-child(odd) {
+    background-color: #22242a;
+}
+
+.markdown >  tr:hover {
+    background-color: #007BFF;
+}
+
