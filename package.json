@@ -1,11 +1,9 @@
 {
   "name": "workflow-thingy",
   "version": "0.1.0",
-  "type": "module",
-  "main": "pages/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "build --win --x64 --mirror https://cnpmjs.org/mirrors/nwjs/ ."
+    "bundle": "npx webpack --config webpack.config.js",
+    "build": "build --win --x64 --mirror https://cnpmjs.org/mirrors/nwjs/ src/"
   },
   "keywords": [],
   "author": "Nathan Jones",
@@ -35,23 +33,16 @@
   },
   "description": "A thingy for workflow",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-loader": "^9.2.1",
     "nwjs-builder-phoenix": "^1.15.0",
-    "nwjs-types": "^1.0.0"
-  },
-  "window": {
-    "icon": "./assets/logo.png",
-    "width": 1600,
-    "height": 900,
-    "toolbar": false,
-    "frame": true,
-    "position": "center",
-    "min_width": 265,
-    "min_height": 400,
-    "resizable": true,
-    "show": true
+    "nwjs-types": "^1.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "ws": "^8.18.0"
+    "assert": "^2.1.0",
+    "constants-browserify": "^1.0.0"
   }
 }

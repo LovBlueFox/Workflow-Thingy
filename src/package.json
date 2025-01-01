@@ -1,0 +1,26 @@
+{
+    "name": "src",
+    "version": "0.1.0",
+    "main": "views/index.html",
+    "chromium-args": "--enable-node-worker --mixed-context",
+    "window": {
+        "icon": "./assets/logo.png",
+        "width": 400,
+        "height": 200,
+        "toolbar": false,
+        "frame": false,
+        "position": "center",
+        "resizable": false,
+        "show": true
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@nwutils/updater": "^0.3.5",
+        "del": "^8.0.0",
+        "dir-glob": "^3.0.1",
+        "fast-glob": "^3.3.2",
+        "globby": "^14.0.2",
+        "merge2": "^1.4.1",
+        "ws": "^8.18.0"
+    }
+}
